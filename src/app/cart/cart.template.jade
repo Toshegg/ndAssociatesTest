@@ -1,0 +1,21 @@
+.cart-checkout
+  .cart-checkout__total-price
+    span Total price: ${{vm.totalPrice()}}
+  .cart-checkout__proceed
+    button.btn.btn-success Proceed
+
+
+.cart-products-list
+  .cart-products-list__product(ng-repeat="product in vm.products")
+    .cart-products-list__product__avatar
+      img(ng-src="{{product.avatar}}")
+    .cart-products-list__product__title
+      span {{product.title}}
+    .cart-products-list__product__right
+      .cart-products-list__product__price
+        span ${{product.price * vm.quantity[product.id]}}
+      .cart-products-list__product__quantity
+        label Quantity:
+        input.form-control(ng-model="vm.quantity[product.id]" type="number" min="1")
+      .cart-products-list__product__delete(ng-click="vm.removeProduct(product)")
+        i.fa.fa-remove

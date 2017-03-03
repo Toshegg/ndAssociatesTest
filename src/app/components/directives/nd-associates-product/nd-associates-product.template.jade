@@ -1,0 +1,12 @@
+.nd-associates-product
+  .nd-associates-product__avatar
+    img(ng-src="{{vm.product.avatar}}")
+  .nd-associates-product__title
+    span {{vm.product.title}}
+  .nd-associates-product__description
+    span {{vm.product.description.substring(0,100)}}
+  .nd-associates-product__price
+    span ${{vm.product.price}}
+  .nd-associates-product__add-to-cart
+    button.btn.btn-default(ng-click="vm.addToCart()") Add to cart
+

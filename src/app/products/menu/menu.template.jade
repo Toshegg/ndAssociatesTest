@@ -1,0 +1,6 @@
+.products-menu
+  .products-menu__categories
+    uib-tabset(active="activePill" vertical="true" type="pills")
+      uib-tab(ng-repeat="category in vm.categories" index="category.id" heading="{{category.title}}" select="vm.selectCategory(category.id)")
+  .products-menu__products
+    div(ui-view="content")

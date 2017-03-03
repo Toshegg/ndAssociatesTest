@@ -1,0 +1,13 @@
+.navbar.navbar-default
+  .container
+    .navbar-header
+      a.navbar-brand(ui-sref="home.products.index") Shop
+    ul.nav.navbar-nav
+      li(ui-sref-active="active")
+        a(ui-sref="home.products.index") Products
+    ul.nav.navbar-nav.navbar-right
+      li.cart(ui-sref-active="active")
+        a(ui-sref="home.cart") 
+          i.fa.fa-shopping-cart
+          .cart__products-count
+            span {{vm.products_count}}
